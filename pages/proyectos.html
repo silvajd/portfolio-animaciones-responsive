@@ -10,6 +10,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- CSS compilado desde SCSS -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -33,48 +36,39 @@
 
                 </button>
 
+
                 <div class="collapse navbar-collapse" id="navbarPortfolio">
 
                     <ul class="navbar-nav ms-auto">
 
                         <li class="nav-item">
-
                             <a class="nav-link" href="../index.html">
                                 Inicio
                             </a>
-
                         </li>
 
                         <li class="nav-item">
-
                             <a class="nav-link" href="./sobre-mi.html">
                                 Sobre mí
                             </a>
-
                         </li>
 
                         <li class="nav-item">
-
                             <a class="nav-link active" aria-current="page" href="./proyectos.html">
                                 Proyectos
                             </a>
-
                         </li>
 
                         <li class="nav-item">
-
                             <a class="nav-link" href="./servicios.html">
                                 Servicios
                             </a>
-
                         </li>
 
                         <li class="nav-item">
-
                             <a class="nav-link" href="./contacto.html">
                                 Contacto
                             </a>
-
                         </li>
 
                     </ul>
@@ -92,7 +86,7 @@
 
         <!-- PRESENTACIÓN -->
 
-        <section class="area-introduccion presentacion-proyectos">
+        <section class="area-introduccion presentacion-proyectos" data-aos="fade-up">
 
             <div>
 
@@ -105,12 +99,12 @@
 
                 <p>
                     Cada proyecto representa una etapa diferente de aprendizaje,
-                    desde la construcción de una estructura HTML hasta la
-                    incorporación de estilos, layouts flexibles, CSS Grid y
-                    componentes de Bootstrap.
+                    desde HTML hasta la incorporación de SCSS, layouts responsivos
+                    y animaciones.
                 </p>
 
             </div>
+
 
             <figure class="imagen-proyectos">
 
@@ -127,20 +121,21 @@
 
         <!-- PROYECTOS -->
 
-        <section class="area-proyectos proyectos-bootstrap">
+        <section class="area-proyectos proyectos-bootstrap" data-aos="fade-up">
 
             <h2>Proyectos realizados</h2>
 
             <p>
                 Estos proyectos muestran la evolución del sitio a medida que
-                incorporé distintas herramientas de desarrollo web.
+                incorporé diferentes tecnologías.
             </p>
+
 
             <div class="row g-4 mt-2">
 
-                <!-- PROYECTO HTML -->
+                <!-- HTML -->
 
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-xl-3" data-aos="zoom-in">
 
                     <article class="card h-100 card-proyecto-bootstrap" tabindex="0">
 
@@ -151,10 +146,8 @@
                             </h3>
 
                             <p class="card-text">
-                                Primera versión del sitio personal realizada
-                                utilizando HTML5, etiquetas semánticas,
-                                navegación entre páginas y una estructura
-                                organizada.
+                                Primera versión del sitio realizada con HTML5,
+                                etiquetas semánticas y navegación entre páginas.
                             </p>
 
                             <button class="btn btn-portfolio mt-auto" type="button" data-bs-toggle="modal"
@@ -171,9 +164,9 @@
                 </div>
 
 
-                <!-- PROYECTO CSS -->
+                <!-- CSS -->
 
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="100">
 
                     <article class="card h-100 card-proyecto-bootstrap" tabindex="0">
 
@@ -184,9 +177,8 @@
                             </h3>
 
                             <p class="card-text">
-                                Evolución visual del sitio mediante colores,
-                                tipografías, fondos y estilos personalizados
-                                para construir una identidad visual propia.
+                                Incorporación de colores, tipografías, fondos
+                                y estilos personalizados.
                             </p>
 
                             <button class="btn btn-portfolio mt-auto" type="button" data-bs-toggle="modal"
@@ -203,9 +195,9 @@
                 </div>
 
 
-                <!-- PROYECTO FLEXBOX -->
+                <!-- FLEXBOX -->
 
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="200">
 
                     <article class="card h-100 card-proyecto-bootstrap" tabindex="0">
 
@@ -217,12 +209,42 @@
 
                             <p class="card-text">
                                 Incorporación de Box Model y Flexbox para
-                                organizar la navegación, las secciones y las
-                                tarjetas de forma flexible y adaptable.
+                                construir layouts flexibles y adaptables.
                             </p>
 
                             <button class="btn btn-portfolio mt-auto" type="button" data-bs-toggle="modal"
                                 data-bs-target="#modalProyectoFlexbox">
+
+                                Ver detalles
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- SCSS -->
+
+                <div class="col-12 col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="300">
+
+                    <article class="card h-100 card-proyecto-bootstrap" tabindex="0">
+
+                        <div class="card-body d-flex flex-column">
+
+                            <h3 class="card-title">
+                                Proyecto SCSS
+                            </h3>
+
+                            <p class="card-text">
+                                Migración de CSS a SCSS mediante variables,
+                                mixins, nesting, extend y partials.
+                            </p>
+
+                            <button class="btn btn-portfolio mt-auto" type="button" data-bs-toggle="modal"
+                                data-bs-target="#modalProyectoScss">
 
                                 Ver detalles
 
@@ -241,15 +263,15 @@
 
         <!-- HERRAMIENTAS -->
 
-        <section class="area-herramientas">
+        <section class="area-herramientas" data-aos="fade-up">
 
             <h2>Herramientas utilizadas</h2>
 
             <p>
-                A lo largo de estos proyectos fui incorporando distintas
-                herramientas y técnicas para construir sitios web cada vez
-                más completos.
+                A lo largo de estos proyectos fui incorporando diferentes
+                herramientas para construir sitios web cada vez más completos.
             </p>
+
 
             <div class="herramientas-contenedor">
 
@@ -258,9 +280,8 @@
                     <h3>HTML5 y CSS3</h3>
 
                     <p>
-                        HTML permite organizar semánticamente el contenido,
-                        mientras que CSS permite definir la presentación
-                        visual del sitio.
+                        HTML organiza semánticamente el contenido y CSS define
+                        la presentación visual.
                     </p>
 
                 </article>
@@ -271,9 +292,8 @@
                     <h3>Flexbox y CSS Grid</h3>
 
                     <p>
-                        Utilizo Flexbox para layouts unidimensionales y CSS
-                        Grid para organizar estructuras que trabajan con
-                        filas y columnas.
+                        Permiten crear layouts flexibles y estructuras
+                        bidimensionales adaptables.
                     </p>
 
                 </article>
@@ -281,12 +301,11 @@
 
                 <article>
 
-                    <h3>Bootstrap</h3>
+                    <h3>SCSS y Bootstrap</h3>
 
                     <p>
-                        Bootstrap permite incorporar componentes reutilizables
-                        y responsivos, complementándolos posteriormente con
-                        estilos propios.
+                        SCSS mejora la organización del código y Bootstrap
+                        proporciona componentes reutilizables y responsivos.
                     </p>
 
                 </article>
@@ -317,16 +336,16 @@
 
                 </div>
 
+
                 <div class="modal-body">
 
                     <p>
-                        Este proyecto corresponde a la primera etapa del
-                        portafolio. El objetivo fue construir una estructura
-                        utilizando HTML5 semántico y organizar correctamente
-                        las diferentes páginas del sitio.
+                        Primera etapa del portafolio construida mediante
+                        HTML5 semántico.
                     </p>
 
                 </div>
+
 
                 <div class="modal-footer">
 
@@ -336,9 +355,7 @@
 
                     <a class="btn btn-portfolio" href="https://github.com/silvajd/sitio-web-personal" target="_blank"
                         rel="noopener noreferrer">
-
                         Ver repositorio
-
                     </a>
 
                 </div>
@@ -369,15 +386,16 @@
 
                 </div>
 
+
                 <div class="modal-body">
 
                     <p>
                         En esta etapa incorporé CSS para aplicar colores,
-                        tipografías, fondos, jerarquías visuales y una
-                        identidad propia a las páginas del portafolio.
+                        tipografías, fondos y jerarquía visual.
                     </p>
 
                 </div>
+
 
                 <div class="modal-footer">
 
@@ -387,9 +405,7 @@
 
                     <a class="btn btn-portfolio" href="https://github.com/silvajd/sitio-web-personal-css"
                         target="_blank" rel="noopener noreferrer">
-
                         Ver repositorio
-
                     </a>
 
                 </div>
@@ -421,16 +437,16 @@
 
                 </div>
 
+
                 <div class="modal-body">
 
                     <p>
-                        Este proyecto incorpora Box Model y Flexbox para
-                        organizar el contenido, distribuir los elementos y
-                        mejorar el comportamiento del sitio en distintos
-                        tamaños de pantalla.
+                        Proyecto donde se aplicaron Box Model y Flexbox para
+                        organizar el contenido y mejorar la adaptación.
                     </p>
 
                 </div>
+
 
                 <div class="modal-footer">
 
@@ -440,9 +456,57 @@
 
                     <a class="btn btn-portfolio" href="https://github.com/silvajd/portfolio-flexbox" target="_blank"
                         rel="noopener noreferrer">
-
                         Ver repositorio
+                    </a>
 
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MODAL SCSS -->
+
+    <div class="modal fade" id="modalProyectoScss" tabindex="-1" aria-labelledby="tituloModalScss" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content modal-portfolio">
+
+                <div class="modal-header">
+
+                    <h2 class="modal-title fs-5" id="tituloModalScss">
+                        Proyecto SCSS
+                    </h2>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <p>
+                        Etapa en la que los estilos fueron migrados a SCSS,
+                        utilizando variables, mixins, nesting y partials.
+                    </p>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cerrar
+                    </button>
+
+                    <a class="btn btn-portfolio" href="https://github.com/silvajd/portfolio-scss" target="_blank"
+                        rel="noopener noreferrer">
+                        Ver repositorio
                     </a>
 
                 </div>
@@ -471,8 +535,13 @@
     </footer>
 
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+
+    <script src="../js/main.js">
     </script>
 
 </body>

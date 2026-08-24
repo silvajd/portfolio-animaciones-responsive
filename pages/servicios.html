@@ -7,10 +7,10 @@
 
     <title>Servicios | Mi Portafolio</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS compilado desde SCSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -33,48 +33,39 @@
 
                 </button>
 
+
                 <div class="collapse navbar-collapse" id="navbarPortfolio">
 
                     <ul class="navbar-nav ms-auto">
 
                         <li class="nav-item">
-
                             <a class="nav-link" href="../index.html">
                                 Inicio
                             </a>
-
                         </li>
 
                         <li class="nav-item">
-
                             <a class="nav-link" href="./sobre-mi.html">
                                 Sobre mí
                             </a>
-
                         </li>
 
                         <li class="nav-item">
-
                             <a class="nav-link" href="./proyectos.html">
                                 Proyectos
                             </a>
-
                         </li>
 
                         <li class="nav-item">
-
                             <a class="nav-link active" aria-current="page" href="./servicios.html">
                                 Servicios
                             </a>
-
                         </li>
 
                         <li class="nav-item">
-
                             <a class="nav-link" href="./contacto.html">
                                 Contacto
                             </a>
-
                         </li>
 
                     </ul>
@@ -92,16 +83,16 @@
 
         <!-- PRESENTACIÓN -->
 
-        <section class="sobre-mi area-servicios-presentacion">
+        <section class="sobre-mi area-servicios-presentacion" data-aos="fade-up">
 
             <div>
 
                 <h1>Servicios</h1>
 
                 <p>
-                    Estos son algunos de los servicios que puedo desarrollar
-                    aplicando los conocimientos y herramientas que fui
-                    incorporando durante mi formación.
+                    En esta sección presento algunas de las tareas y servicios
+                    relacionados con desarrollo web y contenido digital que puedo
+                    realizar a partir de los conocimientos adquiridos.
                 </p>
 
                 <p>
@@ -111,6 +102,7 @@
                 </p>
 
             </div>
+
 
             <figure class="imagen-pagina">
 
@@ -128,21 +120,19 @@
 
         <!-- SERVICIOS -->
 
-        <section class="area-servicios-listado">
+        <section class="area-servicios-listado" data-aos="fade-up">
 
             <h2>Servicios disponibles</h2>
 
             <p>
                 Cada servicio representa un área en la que puedo aplicar los
-                conocimientos adquiridos a lo largo del desarrollo de este
-                portafolio.
+                conocimientos adquiridos a lo largo del desarrollo del portafolio.
             </p>
+
 
             <div class="row g-4 mt-2">
 
-                <!-- SERVICIO 1 -->
-
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in">
 
                     <article class="card h-100 card-servicio-bootstrap" tabindex="0">
 
@@ -153,10 +143,9 @@
                             </h3>
 
                             <p class="card-text">
-                                Creación de páginas web estructuradas mediante
-                                HTML5 semántico y estilizadas con CSS para
-                                lograr una presentación visual clara y
-                                organizada.
+                                Creación de páginas mediante HTML5 semántico,
+                                CSS y SCSS, buscando una estructura clara,
+                                organizada y mantenible.
                             </p>
 
                             <a class="btn btn-portfolio mt-auto" href="./contacto.html">
@@ -170,9 +159,7 @@
                 </div>
 
 
-                <!-- SERVICIO 2 -->
-
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
 
                     <article class="card h-100 card-servicio-bootstrap" tabindex="0">
 
@@ -184,8 +171,7 @@
 
                             <p class="card-text">
                                 Creación y edición de contenido visual destinado
-                                a publicaciones, presentaciones, piezas digitales
-                                y distintos medios de comunicación.
+                                a publicaciones, presentaciones y piezas digitales.
                             </p>
 
                             <a class="btn btn-portfolio mt-auto" href="./contacto.html">
@@ -199,9 +185,7 @@
                 </div>
 
 
-                <!-- SERVICIO 3 -->
-
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
 
                     <article class="card h-100 card-servicio-bootstrap" tabindex="0">
 
@@ -212,10 +196,9 @@
                             </h3>
 
                             <p class="card-text">
-                                Organización de interfaces utilizando Flexbox,
-                                CSS Grid, Media Queries y Bootstrap para que
-                                puedan adaptarse correctamente a celulares,
-                                tablets y computadoras.
+                                Adaptación de interfaces para mejorar su
+                                visualización en celulares, tablets y equipos
+                                de escritorio.
                             </p>
 
                             <a class="btn btn-portfolio mt-auto" href="./contacto.html">
@@ -235,7 +218,7 @@
 
         <!-- METODOLOGÍA -->
 
-        <section class="area-servicios-metodologia">
+        <section class="area-servicios-metodologia" data-aos="fade-up">
 
             <h2>¿Cómo trabajo?</h2>
 
@@ -247,7 +230,7 @@
 
                     <p>
                         Antes de comenzar el desarrollo, organizo el contenido
-                        y determino qué estructura necesita cada sección.
+                        y determino la estructura necesaria.
                     </p>
 
                 </article>
@@ -259,7 +242,7 @@
 
                     <p>
                         Construyo la estructura del sitio y aplico los estilos
-                        necesarios utilizando las herramientas más apropiadas.
+                        utilizando las herramientas apropiadas.
                     </p>
 
                 </article>
@@ -271,7 +254,7 @@
 
                     <p>
                         Reviso el comportamiento del sitio en diferentes
-                        tamaños de pantalla para mejorar su responsividad.
+                        tamaños de pantalla para asegurar su responsividad.
                     </p>
 
                 </article>
@@ -283,14 +266,13 @@
 
         <!-- CONTACTO -->
 
-        <section class="area-servicios-contacto">
+        <section class="area-servicios-contacto" data-aos="fade-up">
 
             <h2>¿Querés comunicarte conmigo?</h2>
 
             <p>
                 Si querés realizar una consulta o conocer más sobre mi trabajo,
-                podés utilizar los medios disponibles en la sección de
-                contacto.
+                podés utilizar los medios disponibles en la sección de contacto.
             </p>
 
             <a class="btn btn-portfolio" href="./contacto.html">
@@ -319,8 +301,13 @@
     </footer>
 
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+
+    <script src="../js/main.js">
     </script>
 
 </body>
