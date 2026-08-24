@@ -4,27 +4,51 @@
 
 h1,
 h2,
+h3,
+h4 {
+  color: #115e59;
+}
+
+h1,
+h2,
 h3 {
   margin-bottom: 15px;
-  color: #115e59;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 3.5vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
 }
 
 h4 {
-  color: #115e59;
+  margin-bottom: 10px;
+  font-size: 1.1875rem;
 }
 
 p {
   line-height: 1.6;
 }
 
+p + p {
+  margin-top: 10px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -34,6 +58,12 @@ body {
   color: #1f2937;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 main {
@@ -45,9 +75,9 @@ main {
 }
 main a:not(.btn) {
   color: #0f766e;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
-  transition: color 0.3s ease, text-decoration-color 0.3s ease, transform 0.2s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 main a:not(.btn):hover {
   color: #0ea5e9;
@@ -70,7 +100,7 @@ main a.btn-portfolio {
 section {
   width: 100%;
   background-color: #ffffff;
-  padding: 25px;
+  padding: 20px;
   border-radius: 10px;
 }
 
@@ -80,6 +110,16 @@ article {
   border-radius: 8px;
 }
 
+@media (min-width: 768px) {
+  section {
+    padding: 25px;
+  }
+}
+@media (min-width: 1024px) {
+  main {
+    padding: 30px;
+  }
+}
 header {
   background-color: #0f766e;
   color: #ffffff;
@@ -193,29 +233,41 @@ header {
   grid-area: informacion;
 }
 
-.presentacion {
+.presentacion,
+.presentacion-proyectos {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: stretch;
-  gap: 30px;
+  gap: 25px;
 }
-.presentacion > div {
+.presentacion > div,
+.presentacion-proyectos > div {
   flex: 1;
+  min-width: 0;
 }
 
 .presentacion-imagen,
 .imagen-pagina,
 .imagen-proyectos {
   flex: 1;
+  min-width: 0;
   margin: 0;
 }
 .presentacion-imagen img,
 .imagen-pagina img,
 .imagen-proyectos img {
-  display: block;
   width: 100%;
   height: auto;
   border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.6s ease, box-shadow 0.3s ease;
+}
+.presentacion-imagen img:hover,
+.imagen-pagina img:hover,
+.imagen-proyectos img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.18);
 }
 .presentacion-imagen figcaption,
 .imagen-pagina figcaption,
@@ -229,12 +281,13 @@ header {
 .sobre-mi {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: stretch;
   gap: 20px;
 }
 .sobre-mi > div {
   flex: 1;
-  padding: 20px;
+  min-width: 0;
 }
 
 .pagina-sobre-mi {
@@ -288,16 +341,6 @@ header {
 
 .area-herramientas {
   grid-area: herramientas;
-}
-
-.presentacion-proyectos {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 20px;
-}
-.presentacion-proyectos > div {
-  flex: 1;
 }
 
 .herramientas-contenedor {
@@ -356,22 +399,44 @@ header {
   grid-area: final;
 }
 
+@media (max-width: 576px) {
+  main {
+    padding: 15px;
+  }
+  section {
+    padding: 20px;
+  }
+  .btn-portfolio {
+    width: 100%;
+  }
+  .presentacion,
+  .presentacion-proyectos,
+  .sobre-mi {
+    gap: 20px;
+  }
+}
 @media (min-width: 768px) {
   main {
     padding: 25px;
   }
   .proyectos-inicio {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
   .pagina-sobre-mi {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "presentacion presentacion" "intereses objetivos" "experiencia experiencia";
   }
   .herramientas-contenedor {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
   .metodologia-contenedor {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 @media (min-width: 1024px) {
@@ -379,9 +444,9 @@ header {
     padding: 30px;
   }
   .inicio-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "presentacion presentacion" "sobre-mi proyectos" "galeria galeria" "informacion informacion";
-    gap: 30px;
+    gap: 40px;
   }
   .presentacion {
     flex-direction: row;
@@ -389,7 +454,8 @@ header {
     align-items: center;
   }
   .proyectos-inicio {
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
   .pagina-sobre-mi {
@@ -403,7 +469,7 @@ header {
     gap: 30px;
   }
   .pagina-proyectos {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "introduccion introduccion" "proyectos proyectos" "herramientas herramientas";
     gap: 30px;
   }
@@ -413,11 +479,14 @@ header {
     gap: 30px;
   }
   .herramientas-contenedor {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
   .pagina-servicios {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "presentacion presentacion" "servicios servicios" "metodologia metodologia" "contacto contacto";
+    gap: 30px;
   }
   .pagina-servicios .sobre-mi {
     flex-direction: row;
@@ -425,11 +494,14 @@ header {
     gap: 30px;
   }
   .metodologia-contenedor {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
   .pagina-contacto {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "presentacion presentacion" "contenido contenido" "final final";
+    gap: 30px;
   }
   .pagina-contacto .sobre-mi {
     flex-direction: row;

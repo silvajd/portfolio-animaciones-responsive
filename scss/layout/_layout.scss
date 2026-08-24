@@ -1,7 +1,7 @@
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
-// INDEX - GRID MOBILE FIRST
+// INDEX - MOBILE FIRST
 
 .inicio-grid {
     @include grid-mobile;
@@ -39,39 +39,53 @@
     grid-area: informacion;
 }
 
-// PRESENTACIÓN GENERAL
+// PRESENTACIONES
 
-.presentacion {
-    display: flex;
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: $espacio-30;
+.presentacion,
+.presentacion-proyectos {
+    @include flex-layout(column,
+        flex-start,
+        stretch,
+        $espacio-25 );
 
 
     >div {
         flex: 1;
+
+        min-width: 0;
     }
 }
 
-// IMÁGENES GENERALES
+// IMÁGENES
 
 .presentacion-imagen,
 .imagen-pagina,
 .imagen-proyectos {
     flex: 1;
 
+    min-width: 0;
+
     margin: 0;
 
 
     img {
-        display: block;
-
         width: 100%;
         height: auto;
 
         border-radius: $radio-general;
+
+        object-fit: cover;
+
+        transition:
+            transform $duracion-lenta ease,
+            box-shadow $duracion-media ease;
+
+
+        &:hover {
+            transform: scale(1.02);
+
+            box-shadow: 0 10px 24px $primario-18;
+        }
     }
 
 
@@ -81,29 +95,27 @@
         color: $color-texto-secundario;
 
         font-size: $tamano-caption;
+
         text-align: center;
     }
 }
 
-// SECCIÓN SOBRE MÍ
+// SOBRE MÍ
 
 .sobre-mi {
-    display: flex;
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: $espacio-20;
+    @include flex-layout(column,
+        flex-start,
+        stretch,
+        $espacio-20 );
 
 
     >div {
         flex: 1;
 
-        padding: $espacio-20;
+        min-width: 0;
     }
 }
 
-// PÁGINA SOBRE MÍ - MOBILE FIRST
 
 .pagina-sobre-mi {
     @include grid-mobile;
@@ -143,15 +155,10 @@
 
 
 .proyectos-inicio {
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: $espacio-20;
+    @include grid-mobile($espacio-20);
 
     margin: $espacio-20 0;
 }
-
 
 // PÁGINA PROYECTOS
 
@@ -179,30 +186,9 @@
     grid-area: herramientas;
 }
 
-// PRESENTACIÓN PROYECTOS
-
-.presentacion-proyectos {
-    display: flex;
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: $espacio-20;
-
-
-    >div {
-        flex: 1;
-    }
-}
-
-// HERRAMIENTAS
 
 .herramientas-contenedor {
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: $espacio-20;
+    @include grid-mobile($espacio-20);
 
     margin-top: $espacio-20;
 }
@@ -239,14 +225,9 @@
     grid-area: contacto;
 }
 
-// METODOLOGÍA
 
 .metodologia-contenedor {
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: $espacio-20;
+    @include grid-mobile($espacio-20);
 
     margin-top: $espacio-20;
 }
@@ -277,7 +258,33 @@
     grid-area: final;
 }
 
-// TABLET - 768px
+// MOBILE PEQUEÑO - HASTA 576px
+
+@media (max-width: $breakpoint-mobile) {
+
+    main {
+        padding: $espacio-15;
+    }
+
+
+    section {
+        padding: $espacio-20;
+    }
+
+
+    .btn-portfolio {
+        width: 100%;
+    }
+
+
+    .presentacion,
+    .presentacion-proyectos,
+    .sobre-mi {
+        gap: $espacio-20;
+    }
+}
+
+// TABLET - DESDE 768px
 
 @media (min-width: $breakpoint-tablet) {
 
@@ -288,7 +295,8 @@
     // INDEX
 
     .proyectos-inicio {
-        grid-template-columns: repeat(2, 1fr);
+        @include grid-columnas(2,
+            $espacio-20 );
     }
 
     // SOBRE MÍ
@@ -302,20 +310,23 @@
             "experiencia experiencia";
     }
 
-    // HERRAMIENTAS
+    // PROYECTOS
 
     .herramientas-contenedor {
-        grid-template-columns: repeat(2, 1fr);
+        @include grid-columnas(2,
+            $espacio-20 );
     }
 
-    // METODOLOGÍA
+    // SERVICIOS
 
     .metodologia-contenedor {
-        grid-template-columns: repeat(2, 1fr);
+        @include grid-columnas(2,
+            $espacio-20 );
     }
 }
 
-// DESKTOP - 1024px
+
+// DESKTOP - DESDE 1024px
 
 @media (min-width: $breakpoint-desktop) {
 
@@ -326,7 +337,7 @@
     // INDEX
 
     .inicio-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
 
         grid-template-areas:
             "presentacion presentacion"
@@ -334,7 +345,7 @@
             "galeria galeria"
             "informacion informacion";
 
-        gap: $espacio-30;
+        gap: $espacio-40;
     }
 
 
@@ -347,9 +358,8 @@
 
 
     .proyectos-inicio {
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: $espacio-20;
+        @include grid-columnas(4,
+            $espacio-20 );
     }
 
     // SOBRE MÍ
@@ -377,7 +387,7 @@
     // PROYECTOS
 
     .pagina-proyectos {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
 
         grid-template-areas:
             "introduccion introduccion"
@@ -398,7 +408,8 @@
 
 
     .herramientas-contenedor {
-        grid-template-columns: repeat(3, 1fr);
+        @include grid-columnas(3,
+            $espacio-20 );
     }
 
     // SERVICIOS
@@ -412,6 +423,8 @@
             "metodologia metodologia"
             "contacto contacto";
 
+        gap: $espacio-30;
+
 
         .sobre-mi {
             flex-direction: row;
@@ -424,7 +437,8 @@
 
 
     .metodologia-contenedor {
-        grid-template-columns: repeat(3, 1fr);
+        @include grid-columnas(3,
+            $espacio-20 );
     }
 
     // CONTACTO
@@ -436,6 +450,8 @@
             "presentacion presentacion"
             "contenido contenido"
             "final final";
+
+        gap: $espacio-30;
 
 
         .sobre-mi {

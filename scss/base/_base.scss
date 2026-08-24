@@ -6,10 +6,17 @@
 * {
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
 }
 
-// ESTILOS GENERALES
+// HTML
+
+html {
+    scroll-behavior: smooth;
+}
+
+// BODY
 
 body {
     min-height: 100vh;
@@ -21,6 +28,16 @@ body {
 
     display: flex;
     flex-direction: column;
+
+    overflow-x: hidden;
+}
+
+// IMÁGENES
+
+img {
+    display: block;
+
+    max-width: 100%;
 }
 
 // CONTENIDO PRINCIPAL
@@ -38,14 +55,13 @@ main {
     a:not(.btn) {
         color: $color-primario;
 
-        font-weight: bold;
+        font-weight: 700;
 
         text-decoration: none;
 
         transition:
-            color 0.3s ease,
-            text-decoration-color 0.3s ease,
-            transform 0.2s ease;
+            color $duracion-media ease,
+            transform $duracion-rapida ease;
 
 
         &:hover {
@@ -84,7 +100,7 @@ section {
 
     background-color: $color-blanco;
 
-    padding: $espacio-25;
+    padding: $espacio-20;
 
     border-radius: $radio-general;
 }
@@ -97,4 +113,22 @@ article {
     padding: $espacio-20;
 
     border-radius: $radio-articulo;
+}
+
+// TABLET
+
+@media (min-width: $breakpoint-tablet) {
+
+    section {
+        padding: $espacio-25;
+    }
+}
+
+// DESKTOP
+
+@media (min-width: $breakpoint-desktop) {
+
+    main {
+        padding: $espacio-30;
+    }
 }
