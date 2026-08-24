@@ -1,0 +1,25 @@
+{
+  "name": "portfolio-scss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass scss/main.scss css/style.css --style=expanded --no-source-map",
+    "sass:watch": "sass --watch scss/main.scss:css/style.css --style=expanded --no-source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvajd/portfolio-scss.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/silvajd/portfolio-scss/issues"
+  },
+  "homepage": "https://github.com/silvajd/portfolio-scss#readme",
+  "devDependencies": {
+    "sass": "^1.103.1"
+  }
+}
