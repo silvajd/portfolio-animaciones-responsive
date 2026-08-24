@@ -1,3 +1,7 @@
+.card-proyecto-bootstrap, .card-servicio-bootstrap {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
 h1,
 h2,
 h3 {
@@ -6,7 +10,7 @@ h3 {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 h4 {
@@ -218,7 +222,7 @@ header {
 .imagen-proyectos figcaption {
   margin-top: 10px;
   color: #4b5563;
-  font-size: 14px;
+  font-size: 0.875rem;
   text-align: center;
 }
 
@@ -532,7 +536,6 @@ footer a:active {
   border-top: 4px solid #0ea5e9;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
-  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card-proyecto-bootstrap:hover {
   border-color: #0ea5e9;
@@ -568,7 +571,6 @@ footer a:active {
   border-top: 4px solid #0f766e;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
-  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card-servicio-bootstrap:hover {
   border-color: #0ea5e9;
@@ -606,7 +608,7 @@ footer a:active {
   border-left: 6px solid #0ea5e9;
   border-radius: 8px;
   color: #115e59;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
 }
@@ -794,7 +796,7 @@ footer a:active {
 .contacto-dato h4 {
   margin-bottom: 10px;
   color: #115e59;
-  font-size: 19px;
+  font-size: 1.1875rem;
 }
 
 .contacto-formulario {

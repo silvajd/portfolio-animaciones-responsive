@@ -1,7 +1,8 @@
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
+@use "../utilities/placeholders" as *;
 
-// CARDS DE PROYECTOS
+// PROYECTOS
 
 .proyectos-bootstrap {
 
@@ -10,10 +11,13 @@
     }
 }
 
+// CARD DE PROYECTO
 
 .card-proyecto-bootstrap {
-    @include card-base($color-acento);
+    @extend %elemento-interactivo;
 
+    @include card-base($color-acento,
+        $primario-10 );
 
     &:hover {
         border-color: $color-acento;
@@ -22,7 +26,6 @@
 
         box-shadow: 0 12px 24px $primario-22;
     }
-
 
     &:focus {
         border-color: $color-acento;
@@ -33,23 +36,19 @@
         transform: translateY(-4px);
     }
 
-
     &:active {
         transform: translateY(-2px) scale(0.98);
 
         box-shadow: 0 6px 14px $primario-18;
     }
 
-
     .card-body {
         padding: $espacio-24;
     }
 
-
     .card-title {
         color: $color-primario-oscuro;
     }
-
 
     .card-text {
         margin-bottom: $espacio-20;
@@ -60,11 +59,13 @@
     }
 }
 
-// CARDS DE SERVICIOS
+// CARD DE SERVICIO
 
 .card-servicio-bootstrap {
-    @include card-base($color-primario);
+    @extend %elemento-interactivo;
 
+    @include card-base($color-primario,
+        $primario-10 );
 
     &:hover {
         border-color: $color-acento;
@@ -73,7 +74,6 @@
 
         box-shadow: 0 12px 24px $primario-20;
     }
-
 
     &:focus {
         border-color: $color-acento;
@@ -84,21 +84,17 @@
         transform: translateY(-4px);
     }
 
-
     &:active {
         transform: translateY(-2px) scale(0.98);
     }
-
 
     .card-body {
         padding: $espacio-24;
     }
 
-
     .card-title {
         color: $color-primario-oscuro;
     }
-
 
     .card-text {
         margin-bottom: $espacio-20;

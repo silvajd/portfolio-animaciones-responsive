@@ -17,9 +17,32 @@
     gap: $gap;
 }
 
+// GRID CON PARÁMETROS
+
+@mixin grid-columnas($columnas,
+    $gap: $espacio-20) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $gap;
+}
+
+// FLEXBOX CON PARÁMETROS
+
+@mixin flex-layout($direccion: row,
+    $justify: flex-start,
+    $align: stretch,
+    $gap: 0) {
+    display: flex;
+    flex-direction: $direccion;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
 // BASE PARA CARDS
 
-@mixin card-base($color-superior) {
+@mixin card-base($color-superior,
+    $sombra: $primario-10) {
     padding: 0;
 
     background-color: $color-blanco;
@@ -29,10 +52,15 @@
 
     border-radius: $radio-general;
 
-    box-shadow: 0 4px 12px $primario-10;
+    box-shadow: 0 4px 12px $sombra;
+}
 
+// TRANSICIÓN INTERACTIVA
+
+@mixin transicion-interactiva($duracion: $duracion-media,
+    $timing: $easing-suave) {
     transition:
-        border-color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        transform $duracion $timing,
+        box-shadow $duracion $timing,
+        border-color $duracion $timing;
 }

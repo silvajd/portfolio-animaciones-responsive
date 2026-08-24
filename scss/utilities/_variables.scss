@@ -22,15 +22,15 @@ $color-modal-footer: #f8fffe;
 
 // TRANSPARENCIAS
 
-$blanco-10: rgba(255, 255, 255, 0.1);
+$blanco-10: rgba(255, 255, 255, 0.10);
 $blanco-12: rgba(255, 255, 255, 0.12);
-$blanco-60: rgba(255, 255, 255, 0.6);
+$blanco-60: rgba(255, 255, 255, 0.60);
 
 $primario-08: rgba(15, 118, 110, 0.08);
-$primario-10: rgba(15, 118, 110, 0.1);
+$primario-10: rgba(15, 118, 110, 0.10);
 $primario-14: rgba(15, 118, 110, 0.14);
 $primario-18: rgba(15, 118, 110, 0.18);
-$primario-20: rgba(15, 118, 110, 0.2);
+$primario-20: rgba(15, 118, 110, 0.20);
 $primario-22: rgba(15, 118, 110, 0.22);
 $primario-28: rgba(15, 118, 110, 0.28);
 $primario-82: rgba(15, 118, 110, 0.82);
@@ -38,7 +38,7 @@ $primario-82: rgba(15, 118, 110, 0.82);
 $acento-15: rgba(14, 165, 233, 0.15);
 $acento-18: rgba(14, 165, 233, 0.18);
 $acento-25: rgba(14, 165, 233, 0.25);
-$acento-30: rgba(14, 165, 233, 0.3);
+$acento-30: rgba(14, 165, 233, 0.30);
 $acento-35: rgba(14, 165, 233, 0.35);
 $acento-45: rgba(14, 165, 233, 0.45);
 
@@ -48,10 +48,10 @@ $gris-25: rgba(107, 114, 128, 0.25);
 
 $fuente-principal: "Trebuchet MS", Arial, sans-serif;
 
-$tamano-h1: 32px;
-$tamano-destacado: 24px;
-$tamano-contacto: 19px;
-$tamano-caption: 14px;
+$tamano-h1: 2rem;
+$tamano-destacado: 1.5rem;
+$tamano-contacto: 1.1875rem;
+$tamano-caption: 0.875rem;
 
 // DIMENSIONES
 
@@ -74,6 +74,18 @@ $espacio-20: 20px;
 $espacio-24: 24px;
 $espacio-25: 25px;
 $espacio-30: 30px;
+
+// OPERADOR DE SASS
+
+$espacio-40: $espacio-20 * 2;
+
+// TRANSICIONES
+
+$duracion-rapida: 0.2s;
+$duracion-media: 0.3s;
+$duracion-lenta: 0.6s;
+
+$easing-suave: ease;
 
 // BREAKPOINTS
 
